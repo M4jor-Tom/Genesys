@@ -1,5 +1,7 @@
 package boards;
 
+import generic.Ratio;
+
 public class Board {
 	private Ratio wheelHardness;
 	private Ratio turning;

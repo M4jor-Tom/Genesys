@@ -1,4 +1,4 @@
-package boards;
+package generic;
 
 public class Ratio {
 	private double value;

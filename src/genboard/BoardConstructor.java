@@ -5,8 +5,8 @@ import java.util.Collection;
 import java.util.Random;
 
 import boards.Board;
-import boards.Ratio;
 import generic.AbstractPopulationConstructor;
+import generic.Ratio;
 
 public class BoardConstructor extends AbstractPopulationConstructor<Board>{
 
