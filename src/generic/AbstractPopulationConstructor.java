@@ -15,17 +15,20 @@ abstract public class AbstractPopulationConstructor<Populator> {
 	abstract protected Populator closeMutation(Populator populator);
 	
 	//Changes a Population object's characteristic
-	public Populator mutation(Populator populator, int muationProbability)
+	public Populator mutation(Populator populator, Ratio mutationProbability)
 	{
 		Random random = new Random();
 		
-		switch(random.nextInt(muationProbability)) {
-			case 0:
+		if(mutationProbability.getValue() > random.nextDouble()) {
+			switch(random.nextInt(2)) {
+				case 0:
+					populator = naiveMutation(populator);
+					break;
 				
-				break;
-			
-			case 1:
-				break;
+				case 1:
+					populator = closeMutation(populator);
+					break;
+			}
 		}
 		
 		return populator;
