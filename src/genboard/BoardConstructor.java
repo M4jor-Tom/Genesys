@@ -10,8 +10,11 @@ import generic.Ratio;
 
 public class BoardConstructor extends AbstractPopulationConstructor<Board>{
 
-	private static int populatioSize = 10;
 	private static Random random = new Random();
+
+	public BoardConstructor(int defaultPopulationSize) {
+		super(defaultPopulationSize);
+	}
 	
 	@Override
 	public Board crossover(Board populator1, Board populator2) {
@@ -84,7 +87,7 @@ public class BoardConstructor extends AbstractPopulationConstructor<Board>{
 	public List<Board> initalizePopulation() {
 		ArrayList<Board> boardArrayList = new ArrayList<Board>();
 		
-		for(int i = 0; i < populatioSize; i++) {
+		for(int i = 0; i < getDefaultPopulationSize(); i++) {
 			boardArrayList.add(
 				new Board(
 					new Ratio(random.nextDouble(), true),

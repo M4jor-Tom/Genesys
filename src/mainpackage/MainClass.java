@@ -11,7 +11,7 @@ public class MainClass {
 	public static void main(String[] args) {
 
 		PopulationIterator<Board> populationIterator = new PopulationIterator<Board>(
-					new BoardConstructor(),
+					new BoardConstructor(10),
 					new SlickRoadEnvironment(),
 					new Ratio(0.1, true)
 		);

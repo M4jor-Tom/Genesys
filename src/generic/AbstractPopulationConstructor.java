@@ -4,7 +4,14 @@ import java.util.List;
 import java.util.Random;
 
 abstract public class AbstractPopulationConstructor<Populator> {
-	
+	private int defaultPopulationSize;
+
+	public AbstractPopulationConstructor(int defaultPopulationSize) {
+		super();
+		
+		setDefaultPopulationSize(defaultPopulationSize);
+	}
+
 	//Creates a new Population object from 2 others
 	abstract public Populator crossover(Populator populator1, Populator populator2);
 	
@@ -36,4 +43,12 @@ abstract public class AbstractPopulationConstructor<Populator> {
 	
 	//Initializes a new population
 	abstract public List<Populator> initalizePopulation();
+
+	protected int getDefaultPopulationSize() {
+		return defaultPopulationSize;
+	}
+
+	private void setDefaultPopulationSize(int defaultPopulationSize) {
+		this.defaultPopulationSize = defaultPopulationSize;
+	}
 }
