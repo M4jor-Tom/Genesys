@@ -6,12 +6,14 @@ public class PopulationIterator<Populator> {
 	private List<Populator> population;
 	private AbstractPopulationConstructor<Populator> populationConstructor;
 	private AbstractEnvironment<Populator> environment;
-	
+	private Ratio mutationProbability;
+
 	public PopulationIterator(
 			AbstractPopulationConstructor<Populator> populationConstructor,
-			AbstractEnvironment<Populator> environment
+			AbstractEnvironment<Populator> environment,
+			Ratio mutationProbability
 		) {
-		this(null, populationConstructor, environment);
+		this(null, populationConstructor, environment, mutationProbability);
 		
 		setPopulation(getPopulationConstructor().initalizePopulation());
 	}
@@ -19,13 +21,15 @@ public class PopulationIterator<Populator> {
 	public PopulationIterator(
 			List<Populator> population,
 			AbstractPopulationConstructor<Populator> populationConstructor,
-			AbstractEnvironment<Populator> environment
+			AbstractEnvironment<Populator> environment,
+			Ratio mutationProbability
 		) {
 		super();
 		
 		setPopulation(population);
 		setPopulationConstructor(populationConstructor);
 		setEnvironment(environment);
+		setMutationProbability(mutationProbability);
 	}
 	
 	public void iterate() {
@@ -54,5 +58,13 @@ public class PopulationIterator<Populator> {
 
 	public void setEnvironment(AbstractEnvironment<Populator> environment) {
 		this.environment = environment;
+	}
+	
+	public Ratio getMutationProbability() {
+		return mutationProbability;
+	}
+
+	public void setMutationProbability(Ratio mutationProbability) {
+		this.mutationProbability = mutationProbability;
 	}
 }
