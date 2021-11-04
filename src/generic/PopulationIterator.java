@@ -33,7 +33,12 @@ public class PopulationIterator<Populator> {
 	}
 	
 	public void iterate() {
+	}
 		
+	public void addPopulator(Populator populator) {
+		List<Populator> population = getPopulation();
+		population.add(populator);
+		setPopulation(population);
 	}
 
 	public List<Populator> getPopulation() {
