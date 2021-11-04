@@ -13,6 +13,11 @@ public class Board {
 		setTurning(turning);
 	}
 
+	@Override
+	public String toString() {
+		return "Board [wheelHardness=" + getWheelHardness() + ", turning=" + getTurning() + "]";
+	}
+
 	public Ratio getWheelHardness() {
 		return wheelHardness;
 	}
