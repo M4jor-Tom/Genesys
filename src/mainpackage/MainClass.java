@@ -9,8 +9,8 @@ public class MainClass {
 	
 	public static void main(String[] args) {
 
-		PopulationIterator<Board, BoardConstructor> populationIterator =
-			new PopulationIterator<Board, BoardConstructor>(new BoardConstructor(), new SlickRoadEnvironment());
+		PopulationIterator<Board> populationIterator =
+			new PopulationIterator<Board>(new BoardConstructor(), new SlickRoadEnvironment());
 		
 
 	}

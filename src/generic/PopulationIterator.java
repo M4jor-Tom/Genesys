@@ -2,13 +2,13 @@ package generic;
 
 import java.util.Collection;
 
-public class PopulationIterator<Populator, PopulationConstructor extends AbstractPopulationConstructor<Populator>> {
+public class PopulationIterator<Populator> {
 	private Collection<Populator> population;
-	private PopulationConstructor populationConstructor;
+	private AbstractPopulationConstructor<Populator> populationConstructor;
 	private AbstractEnvironment<Populator> environment;
 	
 	public PopulationIterator(
-			PopulationConstructor populationConstructor,
+			AbstractPopulationConstructor<Populator> populationConstructor,
 			AbstractEnvironment<Populator> environment
 		) {
 		this(null, populationConstructor, environment);
@@ -18,7 +18,7 @@ public class PopulationIterator<Populator, PopulationConstructor extends Abstrac
 
 	public PopulationIterator(
 			Collection<Populator> population,
-			PopulationConstructor populationConstructor,
+			AbstractPopulationConstructor<Populator> populationConstructor,
 			AbstractEnvironment<Populator> environment
 		) {
 		super();
@@ -40,11 +40,11 @@ public class PopulationIterator<Populator, PopulationConstructor extends Abstrac
 		this.population = population;
 	}
 
-	public PopulationConstructor getPopulationConstructor() {
+	public AbstractPopulationConstructor<Populator> getPopulationConstructor() {
 		return populationConstructor;
 	}
 
-	private void setPopulationConstructor(PopulationConstructor populationConstructor) {
+	private void setPopulationConstructor(AbstractPopulationConstructor<Populator> populationConstructor) {
 		this.populationConstructor = populationConstructor;
 	}
 
