@@ -35,7 +35,7 @@ public class Ratio {
 		this.value = Double.NaN;
 		
 		if(Ratio.valueIsOutOfBounds(value)) {
-			System.out.println("Ratio: value (" + value + ") out of bounds (0.0 - 1.0)");
+			(new Exception("Ratio: value (" + value + ") out of bounds (0.0 - 1.0)")).printStackTrace();
 		}
 		else {
 			this.value = value;
