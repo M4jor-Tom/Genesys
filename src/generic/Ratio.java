@@ -1,5 +1,7 @@
 package generic;
 
+import java.text.DecimalFormat;
+
 public class Ratio {
 	private double value;
 
@@ -12,6 +14,13 @@ public class Ratio {
 		else {
 			setValue(value);
 		}
+	}
+
+	@Override
+	public String toString() {
+		DecimalFormat decimalFormat = new DecimalFormat();
+		decimalFormat.setMaximumFractionDigits(2);
+		return decimalFormat.format(getValue() * 100.0) + "%";
 	}
 
 	public double getValue() {
