@@ -1,8 +1,11 @@
 package generic;
 
 import java.util.List;
+import java.util.Random;
 
 public class PopulationIterator<Populator> {
+	private static Random random = new Random();
+	
 	private List<Populator> population;
 	private AbstractPopulationConstructor<Populator> populationConstructor;
 	private AbstractEnvironment<Populator> environment;
