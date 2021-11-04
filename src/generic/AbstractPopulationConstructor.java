@@ -1,6 +1,6 @@
 package generic;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 abstract public class AbstractPopulationConstructor<Populator> {
@@ -35,5 +35,5 @@ abstract public class AbstractPopulationConstructor<Populator> {
 	}
 	
 	//Initializes a new population
-	abstract public Collection<Populator> initalizePopulation();
+	abstract public List<Populator> initalizePopulation();
 }

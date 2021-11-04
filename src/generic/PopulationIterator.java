@@ -1,9 +1,9 @@
 package generic;
 
-import java.util.Collection;
+import java.util.List;
 
 public class PopulationIterator<Populator> {
-	private Collection<Populator> population;
+	private List<Populator> population;
 	private AbstractPopulationConstructor<Populator> populationConstructor;
 	private AbstractEnvironment<Populator> environment;
 	
@@ -17,7 +17,7 @@ public class PopulationIterator<Populator> {
 	}
 
 	public PopulationIterator(
-			Collection<Populator> population,
+			List<Populator> population,
 			AbstractPopulationConstructor<Populator> populationConstructor,
 			AbstractEnvironment<Populator> environment
 		) {
@@ -32,11 +32,11 @@ public class PopulationIterator<Populator> {
 		
 	}
 
-	public Collection<Populator> getPopulation() {
+	public List<Populator> getPopulation() {
 		return population;
 	}
 
-	public void setPopulation(Collection<Populator> population) {
+	public void setPopulation(List<Populator> population) {
 		this.population = population;
 	}
 

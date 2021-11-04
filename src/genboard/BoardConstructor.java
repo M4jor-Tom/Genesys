@@ -1,7 +1,7 @@
 package genboard;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 import boards.Board;
@@ -81,7 +81,7 @@ public class BoardConstructor extends AbstractPopulationConstructor<Board>{
 	}
 
 	@Override
-	public Collection<Board> initalizePopulation() {
+	public List<Board> initalizePopulation() {
 		ArrayList<Board> boardArrayList = new ArrayList<Board>();
 		
 		for(int i = 0; i < populatioSize; i++) {
