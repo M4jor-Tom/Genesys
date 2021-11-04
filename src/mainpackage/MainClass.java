@@ -10,9 +10,30 @@ public class MainClass {
 	
 	public static void main(String[] args) {
 
-		PopulationIterator<Board> populationIterator =
-			new PopulationIterator<Board>(new BoardConstructor(), new SlickRoadEnvironment(), new Ratio(0.1, true));
+		PopulationIterator<Board> populationIterator = new PopulationIterator<Board>(
+					new BoardConstructor(),
+					new SlickRoadEnvironment(),
+					new Ratio(0.1, true)
+		);
 		
-
+		while(true) {
+			populationIterator.iterate();
+			
+			cleanConsole();
+			System.out.println(populationIterator.populationToString());
+			
+			try {
+				Thread.sleep(5);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	private static void cleanConsole() {
+		for(int i = 0; i < 30; i ++) {
+			System.out.println("\n");
+		}
 	}
 }
